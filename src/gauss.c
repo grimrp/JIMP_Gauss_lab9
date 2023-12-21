@@ -38,8 +38,8 @@ int eliminate(Matrix *mat, Matrix *b){
 			b->data[j][0] = b->data[j][0] - (b->data[i][0] * n);
 		}
 	}
-	printToScreen(mat);
-	printToScreen(b);
+
+
 	
 	
 
