@@ -12,7 +12,7 @@ int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
 	double temp;
 	for(int j=c-1;i>0;i--){
 	        for(int i=c;i>j;i--)
-        	temp+=x->data[i] * mat->data[i][i];
+        	temp+=x->data[i] * mat->data[i-1][i-1];
 	x->data[j]=(temp+b->data[j])/mat->data[j][j];
 	}
 
