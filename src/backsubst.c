@@ -7,26 +7,7 @@
 int  backsubst(Matrix *x, Matrix *mat, Matrix *b) {
 				/**
 				 * Tutaj należy umieścić właściwą implemntację.
-				 */	
-for(int i=0 ; i < mat->r ; i++){
-		if( mat->data[i][0]==0)
-			return 1;
-	}
-	
-	if(mat->r != mat->c)
-		return 2;
-
-	x->data[mat->c][0]=b->data[mat->c][0]/mat->data[mat->r][mat->c];
-	double temp;
-	for(int j=(mat->c)-1;j>0;j--){
-	        for(int i=mat->c;i>j;i--)
-        	temp+=x->data[i][0] * mat->data[i-1][i-1];
-	x->data[j][0]=(temp+b->data[j][0])/mat->data[j][j];
-	}
-
-
-
-
+				 */
 
 				/* To ponizej jest przepisaniem b do x. Nalezy to poprawic! */
 

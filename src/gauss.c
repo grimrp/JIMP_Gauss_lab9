@@ -21,6 +21,9 @@ int eliminate(Matrix *mat, Matrix *b){
 		mat->data[0][i]=mat->data[main_elem_index][i];
 		mat->data[main_elem_index][i]=temp;
 	}
+	temp=b->data[0][0];
+	b->data[0][0]=b->data[main_elem_index][0];
+	b->data[main_elem_index][0]=temp;
 	
 	double n;
 	for(int i=0;i<mat->r-1;i++){
@@ -30,11 +33,15 @@ int eliminate(Matrix *mat, Matrix *b){
 			}
 			n = (mat->data[j][i] / mat->data[i][i]);
 			for(int k=0;k<mat->c+1;k++){
-				mat->data[j][k]=(mat->data[i][k] * n);
+				mat->data[j][k]= mat->data[j][k] - (mat->data[i][k] * n);
 			}
-			b->data[j][0]=(b->data[i][0] * n);
+			b->data[j][0] = b->data[j][0] - (b->data[i][0] * n);
 		}
 	}
+	printToScreen(mat);
+	printToScreen(b);
+	
+	
 
 		return 0;
 }
