@@ -18,7 +18,7 @@ for(int i=0 ; i < mat->r ; i++){
 
 	x->data[mat->c]=b->data[mat->c]/mat->data[mat->r][mat->c];
 	double temp;
-	for(int j=(mat->c)-1;i>0;i--){
+	for(int j=(mat->c)-1;j>0;j--){
 	        for(int i=mat->c;i>j;i--)
         	temp+=x->data[i][0] * mat->data[i-1][i-1];
 	x->data[j][0]=(temp+b->data[j][0])/mat->data[j][j];
